@@ -280,7 +280,7 @@
             <configLocation>global-build-tools/checkstyle.xml</configLocation>
             <encoding>UTF-8</encoding>
             <enableRulesSummary>false</enableRulesSummary>
-            <linkXRef>false</linkXRef>
+            <linkXRef>true</linkXRef>
           </configuration>
         </plugin>
 
@@ -587,9 +587,13 @@
         <artifactId>maven-jxr-plugin</artifactId>
         <version>2.4</version>
         <inherited>true</inherited>
-        <configuration>
-          <suppressTestXref>true</suppressTestXref>
-        </configuration>
+        <reportSets>
+          <reportSet>
+            <reports>
+              <report>jxr</report>
+            </reports>
+          </reportSet>
+        </reportSets>
       </plugin>
 
       <!-- check style -->
