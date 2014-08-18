@@ -520,6 +520,12 @@
           <version>1.7</version>
         </plugin>
 
+        <plugin>
+          <groupId>com.github.github</groupId>
+          <artifactId>site-maven-plugin</artifactId>
+          <version>0.9</version>
+        </plugin>
+
       </plugins>
 
     </pluginManagement>
