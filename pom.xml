@@ -7,10 +7,35 @@
   <version>1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
+  <name>io.wcm.maven.global-parent</name>
+  <description>Global parent for Maven artifact hierarchy. Defines fix versions of Maven plugins to be used and certain general Maven settings.</description>
+
   <scm>
     <developerConnection>scm:git:git@github.com:pro-vision/wcm-io-sandbox.git</developerConnection>
     <tag>HEAD</tag>
   </scm>
+
+  <inceptionYear>2014</inceptionYear>
+
+  <organization>
+    <name>wcm.io</name>
+    <url>http://wcm.io</url>
+  </organization>
+
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+  
+  <developers>
+    <developer>
+      <name>Stefan Seifert</name>
+      <organization>pro!vision GmbH</organization>
+      <organizationUrl>http://www.pro-vision.de</organizationUrl>
+    </developer>
+  </developers>
 
   <properties>
 
