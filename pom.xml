@@ -240,11 +240,26 @@
             </file>
             <file>
               <name>.checkstyle</name>
-              <location>/global-build-tools/eclipse/checkstyle-eclipse-plugin.xml</location>
+              <content>
+                <![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+                <fileset-config file-format-version="1.2.0" simple-config="true" sync-formatter="false">
+                  <local-check-config name="wcm.io" location=".settings/plugins/checkstyle-config.xml" type="project" description="">
+                    <property name="checkstyle.suppressions.file" value="${basedir}/.settings/plugins/checkstyle-suppressions.xml"/>
+                    <additional-data name="protect-config-file" value="true"/>
+                  </local-check-config>
+                  <fileset name="all" enabled="true" check-config-name="wcm.io" local="true">
+                    <file-match-pattern match-pattern="^.*\.java$" include-pattern="true"/>
+                  </fileset>
+                </fileset-config>]]>
+              </content>
             </file>
             <file>
               <name>.settings/plugins/checkstyle-config.xml</name>
               <location>/global-build-tools/checkstyle.xml</location>
+            </file>
+            <file>
+              <name>.settings/plugins/checkstyle-suppressions.xml</name>
+              <location>/global-build-tools/checkstyle-suppressions.xml</location>
             </file>
             <file>
               <name>.settings/plugins/findbugs-exclude.xml</name>
@@ -252,7 +267,15 @@
             </file>
             <file>
               <name>.pmd</name>
-              <location>/global-build-tools/eclipse/pmd-eclipse-plugin.xml</location>
+              <content>
+                <![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+                <pmd>
+                  <useProjectRuleSet>true</useProjectRuleSet>
+                  <ruleSetFile>.settings/plugins/pmd-ruleset.xml</ruleSetFile>
+                  <includeDerivedFiles>false</includeDerivedFiles>
+                  <violationsAsErrors>false</violationsAsErrors>
+                </pmd>]]>
+              </content>
             </file>
             <file>
               <name>.settings/plugins/pmd-ruleset.xml</name>
@@ -299,6 +322,8 @@
           <version>2.12.1</version>
           <configuration>
             <configLocation>global-build-tools/checkstyle.xml</configLocation>
+            <suppressionsFileExpression>checkstyle.suppressions.file</suppressionsFileExpression>
+            <suppressionsLocation>global-build-tools/checkstyle-suppressions.xml</suppressionsLocation>
             <encoding>UTF-8</encoding>
             <enableRulesSummary>false</enableRulesSummary>
             <linkXRef>true</linkXRef>
