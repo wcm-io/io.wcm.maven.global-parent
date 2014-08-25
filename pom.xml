@@ -107,6 +107,13 @@
         <version>2-SNAPSHOT</version>
       </extension>
 
+      <!-- SCP support for deploying sites -->
+      <extension>
+        <groupId>org.apache.maven.wagon</groupId>
+        <artifactId>wagon-ssh</artifactId>
+        <version>2.6</version>
+      </extension>
+    
     </extensions>
     <plugins>
 
@@ -570,12 +577,6 @@
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>license-maven-plugin</artifactId>
           <version>1.7</version>
-        </plugin>
-
-        <plugin>
-          <groupId>com.github.github</groupId>
-          <artifactId>site-maven-plugin</artifactId>
-          <version>0.9</version>
         </plugin>
 
         <plugin>
