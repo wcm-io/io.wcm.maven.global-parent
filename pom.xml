@@ -176,6 +176,9 @@
           </excludes>
           <!-- Fix Cobertura with JDK 1.7: see http://stackoverflow.com/questions/7010665/testng-emma-cobertura-coverage-and-jdk-7-result-in-classformaterror-and-verif -->
           <argLine>-Xmx1024m -XX:-UseSplitVerifier</argLine>
+          <!-- Execute tests in parallel by default -->
+          <parallel>classes</parallel>
+          <threadCount>4</threadCount>
         </configuration>
       </plugin>
 
@@ -767,6 +770,19 @@
 
   <!-- Profiles -->
   <profiles>
+
+    <!-- "Fast" profile for quick compile of the project without any unit tests etc. -->
+    <profile>
+      <id>fast</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+      <properties>
+        <unittests.skip>true</unittests.skip>
+        <integrationtests.skip>true</integrationtests.skip>
+        <maven.javadoc.skip>true</maven.javadoc.skip>
+      </properties>
+    </profile>
 
     <!-- Profile for running unit test and site analysis in CI -->
     <profile>
