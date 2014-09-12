@@ -24,7 +24,7 @@
 
   <groupId>io.wcm.maven</groupId>
   <artifactId>io.wcm.maven.global-parent</artifactId>
-  <version>2-SNAPSHOT</version>
+  <version>2</version>
   <packaging>pom</packaging>
 
   <name>io.wcm.maven.global-parent</name>
@@ -35,7 +35,7 @@
     <connection>scm:git:git@github.com:wcm-io/wcm-io.git</connection>
     <developerConnection>scm:git:git@github.com:wcm-io/wcm-io.git</developerConnection>
     <url>https://github.com/wcm-io/wcm-io</url>
-    <tag>HEAD</tag>
+    <tag>io.wcm.maven.global-parent-2</tag>
   </scm>
 
   <inceptionYear>2014</inceptionYear>
@@ -254,11 +254,11 @@
                 <![CDATA[<?xml version="1.0" encoding="UTF-8"?>
                 <fileset-config file-format-version="1.2.0" simple-config="true" sync-formatter="false">
                   <local-check-config name="wcm.io" location=".settings/plugins/checkstyle-config.xml" type="project" description="">
-                    <property name="checkstyle.suppressions.file" value="${basedir}/.settings/plugins/checkstyle-suppressions.xml"/>
-                    <additional-data name="protect-config-file" value="true"/>
+                    <property name="checkstyle.suppressions.file" value="${basedir}/.settings/plugins/checkstyle-suppressions.xml" />
+                    <additional-data name="protect-config-file" value="true" />
                   </local-check-config>
                   <fileset name="all" enabled="true" check-config-name="wcm.io" local="true">
-                    <file-match-pattern match-pattern="^.*\.java$" include-pattern="true"/>
+                    <file-match-pattern match-pattern="^.*\.java$" include-pattern="true" />
                   </fileset>
                 </fileset-config>]]>
               </content>
@@ -606,7 +606,7 @@
                     </goals>
                   </pluginExecutionFilter>
                   <action>
-                    <ignore/>
+                    <ignore />
                   </action>
                 </pluginExecution>
               </pluginExecutions>
