@@ -23,15 +23,15 @@
     xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 http://maven.apache.org/plugins/maven-changes-plugin/xsd/changes-1.0.0.xsd">
   <body>
 
-    <release version="2-SNAPSHOT" date="not released">
+    <release version="2" date="2014-09-12">
       <action type="update" dev="sseifert">
-        Update to latest global-build-tools.
+        Initial release.
       </action>
     </release>
 
     <release version="1" date="2014-08-19">
       <action type="add" dev="sseifert">
-        Initial release.
+        First test release to maven central.
       </action>
     </release>
 
