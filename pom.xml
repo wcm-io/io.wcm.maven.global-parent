@@ -32,9 +32,9 @@
   <url>https://wcm.io/</url>
 
   <scm>
-    <connection>scm:git:https://github.com/wcm-io/wcm-io-tooling.git</connection>
-    <developerConnection>scm:git:https://github.com/wcm-io/wcm-io-tooling.git</developerConnection>
-    <url>https://github.com/wcm-io/wcm-io-tooling</url>
+    <connection>scm:git:https://github.com/wcm-io/io.wcm.maven.global-parent.git</connection>
+    <developerConnection>scm:git:https://github.com/wcm-io/io.wcm.maven.global-parent.git</developerConnection>
+    <url>https://github.com/wcm-io/io.wcm.maven.global-parent</url>
     <tag>HEAD</tag>
   </scm>
 
@@ -382,32 +382,6 @@
         <configuration>
           <skip>true</skip>
           <skipDeploy>true</skipDeploy>
-        </configuration>
-      </plugin>
-
-      <!-- gitflow customization (only for this pom) -->
-      <plugin>
-        <groupId>com.amashchenko.maven.plugin</groupId>
-        <artifactId>gitflow-maven-plugin</artifactId>
-        <inherited>false</inherited>
-        <configuration>
-          <gitFlowConfig>
-            <releaseBranchPrefix>release/${project.artifactId}-</releaseBranchPrefix>
-            <hotfixBranchPrefix>hotfix/${project.artifactId}-</hotfixBranchPrefix>
-            <versionTagPrefix>${project.artifactId}-</versionTagPrefix>
-          </gitFlowConfig>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>external.atlassian.jgitflow</groupId>
-        <artifactId>jgitflow-maven-plugin</artifactId>
-        <inherited>false</inherited>
-        <configuration>
-          <flowInitContext>
-            <releaseBranchPrefix>release/${project.artifactId}-</releaseBranchPrefix>
-            <hotfixBranchPrefix>hotfix/${project.artifactId}-</hotfixBranchPrefix>
-            <versionTagPrefix>${project.artifactId}-</versionTagPrefix>
-          </flowInitContext>
         </configuration>
       </plugin>
 
