@@ -24,7 +24,7 @@
 
   <groupId>io.wcm.maven</groupId>
   <artifactId>io.wcm.maven.global-parent</artifactId>
-  <version>40</version>
+  <version>41</version>
   <packaging>pom</packaging>
 
   <name>io.wcm.maven.global-parent</name>
@@ -32,9 +32,9 @@
   <url>https://wcm.io/</url>
 
   <scm>
-    <connection>scm:git:https://github.com/wcm-io/wcm-io-tooling.git</connection>
-    <developerConnection>scm:git:https://github.com/wcm-io/wcm-io-tooling.git</developerConnection>
-    <url>https://github.com/wcm-io/wcm-io-tooling</url>
+    <connection>scm:git:https://github.com/wcm-io/io.wcm.maven.global-parent.git</connection>
+    <developerConnection>scm:git:https://github.com/wcm-io/io.wcm.maven.global-parent.git</developerConnection>
+    <url>https://github.com/wcm-io/io.wcm.maven.global-parent</url>
     <tag>HEAD</tag>
   </scm>
 
@@ -72,10 +72,11 @@
     <integrationtests.skip>${maven.test.skip}</integrationtests.skip>
 
     <!-- Java Version to build against (can be overridden by inheriting poms) -->
-    <!-- Use 1.7, 1.8 for Java versions <= 8, and 9, 10, 11 ... for Java Versions >= 9 -->
+    <!-- Use "1.8" for Java 8, and "11", "17" ... for Java Versions >= 9 -->
     <java.version>1.8</java.version>
     <build.compiler.source>${java.version}</build.compiler.source>
     <build.compiler.target>${java.version}</build.compiler.target>
+    <!-- If java.version is set to "1.8", set this variable to "8" -->
     <build.compiler.release>${build.compiler.target}</build.compiler.release>
 
     <!-- pmd needs this as a global property, even in mvn 3 - may be fixed some day -->
@@ -93,8 +94,8 @@
 
     <!-- Plugin version -->
     <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
-    <maven-release-plugin.version>3.0.0-M4</maven-release-plugin.version>
-    <spotbugs-plugin.version>4.5.0.0</spotbugs-plugin.version>
+    <maven-release-plugin.version>3.0.0-M5</maven-release-plugin.version>
+    <spotbugs-plugin.version>4.5.3.0</spotbugs-plugin.version>
     <spotbugs-findsecbugs-plugin.version>1.11.0</spotbugs-findsecbugs-plugin.version>
 
     <!-- Set to 'enabled' to activate org.eclipse.jdt.core.compiler.annotation.nullanalysis feature in eclipse settings -->
@@ -127,7 +128,7 @@
       <dependency>
         <groupId>com.github.spotbugs</groupId>
         <artifactId>spotbugs-annotations</artifactId>
-        <version>4.5.0</version>
+        <version>4.5.3</version>
         <exclusions>
           <!-- Do not include JSR-305 annotations - the standard never got accepted, use the nullability annotations from Jetbrains instead -->
           <exclusion>
@@ -385,32 +386,6 @@
         </configuration>
       </plugin>
 
-      <!-- gitflow customization (only for this pom) -->
-      <plugin>
-        <groupId>com.amashchenko.maven.plugin</groupId>
-        <artifactId>gitflow-maven-plugin</artifactId>
-        <inherited>false</inherited>
-        <configuration>
-          <gitFlowConfig>
-            <releaseBranchPrefix>release/${project.artifactId}-</releaseBranchPrefix>
-            <hotfixBranchPrefix>hotfix/${project.artifactId}-</hotfixBranchPrefix>
-            <versionTagPrefix>${project.artifactId}-</versionTagPrefix>
-          </gitFlowConfig>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>external.atlassian.jgitflow</groupId>
-        <artifactId>jgitflow-maven-plugin</artifactId>
-        <inherited>false</inherited>
-        <configuration>
-          <flowInitContext>
-            <releaseBranchPrefix>release/${project.artifactId}-</releaseBranchPrefix>
-            <hotfixBranchPrefix>hotfix/${project.artifactId}-</hotfixBranchPrefix>
-            <versionTagPrefix>${project.artifactId}-</versionTagPrefix>
-          </flowInitContext>
-        </configuration>
-      </plugin>
-
     </plugins>
 
     <!-- plugin management -->
@@ -456,7 +431,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-deploy-plugin</artifactId>
-          <version>3.0.0-M1</version>
+          <version>3.0.0-M2</version>
         </plugin>
 
         <plugin>
@@ -613,7 +588,7 @@
             <dependency>
               <groupId>com.puppycrawl.tools</groupId>
               <artifactId>checkstyle</artifactId>
-              <version>9.2</version>
+              <version>9.2.1</version>
             </dependency>
           </dependencies>
         </plugin>
@@ -665,7 +640,7 @@
             <dependency>
               <groupId>org.apache.maven.scm</groupId>
               <artifactId>maven-scm-provider-gitexe</artifactId>
-              <version>1.12.0</version>
+              <version>1.12.2</version>
             </dependency>
           </dependencies>
         </plugin>
@@ -679,7 +654,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-scm-plugin</artifactId>
-          <version>1.12.0</version>
+          <version>1.12.2</version>
         </plugin>
 
         <plugin>
@@ -691,7 +666,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
-          <version>3.9.1</version>
+          <version>3.10.0</version>
         </plugin>
 
         <plugin>
@@ -733,7 +708,7 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>build-helper-maven-plugin</artifactId>
-          <version>3.2.0</version>
+          <version>3.3.0</version>
         </plugin>
 
         <plugin>
@@ -818,7 +793,7 @@
         <plugin>
           <groupId>com.github.eirslett</groupId>
           <artifactId>frontend-maven-plugin</artifactId>
-          <version>1.12.0</version>
+          <version>1.12.1</version>
         </plugin>
 
         <plugin>
@@ -842,7 +817,7 @@
         <plugin>
           <groupId>com.amashchenko.maven.plugin</groupId>
           <artifactId>gitflow-maven-plugin</artifactId>
-          <version>1.16.0</version>
+          <version>1.17.0</version>
           <configuration>
             <skipTestProject>${gitflow.skipTestProject}</skipTestProject>
             <verbose>${gitflow.verbose}</verbose>
