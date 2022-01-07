@@ -95,7 +95,7 @@
     <!-- Plugin version -->
     <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
     <maven-release-plugin.version>3.0.0-M5</maven-release-plugin.version>
-    <spotbugs-plugin.version>4.5.2.0</spotbugs-plugin.version>
+    <spotbugs-plugin.version>4.5.3.0</spotbugs-plugin.version>
     <spotbugs-findsecbugs-plugin.version>1.11.0</spotbugs-findsecbugs-plugin.version>
 
     <!-- Set to 'enabled' to activate org.eclipse.jdt.core.compiler.annotation.nullanalysis feature in eclipse settings -->
@@ -128,7 +128,7 @@
       <dependency>
         <groupId>com.github.spotbugs</groupId>
         <artifactId>spotbugs-annotations</artifactId>
-        <version>4.5.2</version>
+        <version>4.5.3</version>
         <exclusions>
           <!-- Do not include JSR-305 annotations - the standard never got accepted, use the nullability annotations from Jetbrains instead -->
           <exclusion>
@@ -708,7 +708,7 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>build-helper-maven-plugin</artifactId>
-          <version>3.2.0</version>
+          <version>3.3.0</version>
         </plugin>
 
         <plugin>
