@@ -72,10 +72,11 @@
     <integrationtests.skip>${maven.test.skip}</integrationtests.skip>
 
     <!-- Java Version to build against (can be overridden by inheriting poms) -->
-    <!-- Use 1.7, 1.8 for Java versions <= 8, and 9, 10, 11 ... for Java Versions >= 9 -->
+    <!-- Use "1.8" for Java 8, and "11", "17" ... for Java Versions >= 9 -->
     <java.version>1.8</java.version>
     <build.compiler.source>${java.version}</build.compiler.source>
     <build.compiler.target>${java.version}</build.compiler.target>
+    <!-- If java.version is set to "1.8", set this variable to "8" -->
     <build.compiler.release>${build.compiler.target}</build.compiler.release>
 
     <!-- pmd needs this as a global property, even in mvn 3 - may be fixed some day -->

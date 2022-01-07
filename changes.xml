@@ -249,7 +249,7 @@
         Update to global-build-tools 14.
       </action>
       <action type="update" dev="sseifert">
-        Set default Maven version to Java 8 and enfore it as minimum java version.
+        Set default Java version to Java 8 and enfore it as minimum java version.
       </action>
       <action type="update" dev="sseifert">
         Update plugins to latest versions.
