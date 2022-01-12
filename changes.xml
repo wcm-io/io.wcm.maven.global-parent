@@ -27,6 +27,9 @@
       <action type="update" dev="sseifert">
         Update plugins and dependencies to latest versions.
       </action>
+      <action type="update" dev="sseifert">
+        Define property jacoco-maven-plugin.version.
+      </action>
     </release>
 
     <release version="41" date="2022-01-07">
