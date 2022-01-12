@@ -788,7 +788,11 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>versions-maven-plugin</artifactId>
-          <version>2.8.1</version>
+          <version>2.9.0</version>
+          <configuration>
+            <!-- Expected behavior when using gitflow-release-plugin is to only affect current folder and sub modules, not parent or sibling folders -->
+            <processFromLocalAggregationRoot>false</processFromLocalAggregationRoot>
+          </configuration>
         </plugin>
 
         <plugin>
