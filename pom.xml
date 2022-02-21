@@ -98,6 +98,7 @@
     <spotbugs-plugin.version>4.5.3.0</spotbugs-plugin.version>
     <spotbugs-findsecbugs-plugin.version>1.11.0</spotbugs-findsecbugs-plugin.version>
     <jacoco-maven-plugin.version>0.8.7</jacoco-maven-plugin.version>
+    <versions-maven-plugin.version>2.9.0</versions-maven-plugin.version>
 
     <!-- Set to 'enabled' to activate org.eclipse.jdt.core.compiler.annotation.nullanalysis feature in eclipse settings -->
     <eclipse.settings.nullanalysis>disabled</eclipse.settings.nullanalysis>
@@ -788,7 +789,7 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>versions-maven-plugin</artifactId>
-          <version>2.9.0</version>
+          <version>${versions-maven-plugin.version}</version>
           <configuration>
             <!-- Expected behavior when using gitflow-release-plugin is to only affect current folder and sub modules, not parent or sibling folders -->
             <processFromLocalAggregationRoot>false</processFromLocalAggregationRoot>
@@ -822,8 +823,9 @@
         <plugin>
           <groupId>com.amashchenko.maven.plugin</groupId>
           <artifactId>gitflow-maven-plugin</artifactId>
-          <version>1.17.0</version>
+          <version>1.18.0</version>
           <configuration>
+            <versionsMavenPluginVersion>${versions-maven-plugin.version}</versionsMavenPluginVersion>
             <skipTestProject>${gitflow.skipTestProject}</skipTestProject>
             <verbose>${gitflow.verbose}</verbose>
             <pushRemote>${gitflow.pushRemote}</pushRemote>
