@@ -794,7 +794,7 @@
           <configuration>
             <outputLineWidth>110</outputLineWidth>
             <!-- Expected behavior when using gitflow-release-plugin is to only affect current folder and sub modules, not parent or sibling folders -->
-            <processFromLocalAggregationRoot>false</processFromLocalAggregationRoot>            
+            <processFromLocalAggregationRoot>false</processFromLocalAggregationRoot>
           </configuration>
         </plugin>
 
