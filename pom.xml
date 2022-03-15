@@ -24,7 +24,7 @@
 
   <groupId>io.wcm.maven</groupId>
   <artifactId>io.wcm.maven.global-parent</artifactId>
-  <version>42</version>
+  <version>43</version>
   <packaging>pom</packaging>
 
   <name>io.wcm.maven.global-parent</name>
@@ -98,6 +98,7 @@
     <spotbugs-plugin.version>4.5.3.0</spotbugs-plugin.version>
     <spotbugs-findsecbugs-plugin.version>1.11.0</spotbugs-findsecbugs-plugin.version>
     <jacoco-maven-plugin.version>0.8.7</jacoco-maven-plugin.version>
+    <versions-maven-plugin.version>2.10.0</versions-maven-plugin.version>
 
     <!-- Set to 'enabled' to activate org.eclipse.jdt.core.compiler.annotation.nullanalysis feature in eclipse settings -->
     <eclipse.settings.nullanalysis>disabled</eclipse.settings.nullanalysis>
@@ -129,7 +130,7 @@
       <dependency>
         <groupId>com.github.spotbugs</groupId>
         <artifactId>spotbugs-annotations</artifactId>
-        <version>4.5.3</version>
+        <version>4.6.0</version>
         <exclusions>
           <!-- Do not include JSR-305 annotations - the standard never got accepted, use the nullability annotations from Jetbrains instead -->
           <exclusion>
@@ -420,13 +421,13 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.9.0</version>
+          <version>3.10.1</version>
         </plugin>
 
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-dependency-plugin</artifactId>
-          <version>3.2.0</version>
+          <version>3.3.0</version>
         </plugin>
 
         <plugin>
@@ -563,7 +564,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
-          <version>3.3.1</version>
+          <version>3.3.2</version>
         </plugin>
 
         <plugin>
@@ -589,7 +590,8 @@
             <dependency>
               <groupId>com.puppycrawl.tools</groupId>
               <artifactId>checkstyle</artifactId>
-              <version>9.2.1</version>
+              <!-- Stick with version 9.x because since 10.x Java 11 is mandatory minimum requirement -->
+              <version>9.3</version>
             </dependency>
           </dependencies>
         </plugin>
@@ -597,7 +599,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-pmd-plugin</artifactId>
-          <version>3.15.0</version>
+          <version>3.16.0</version>
           <configuration>
             <targetJdk>${java.version}</targetJdk>
             <format>xml</format>
@@ -620,7 +622,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-project-info-reports-plugin</artifactId>
-          <version>3.1.2</version>
+          <version>3.2.2</version>
         </plugin>
 
         <plugin>
@@ -667,7 +669,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
-          <version>3.10.0</version>
+          <version>3.11.0</version>
         </plugin>
 
         <plugin>
@@ -745,7 +747,7 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>taglist-maven-plugin</artifactId>
-          <version>2.4</version>
+          <version>3.0.0</version>
           <configuration>
             <tagListOptions>
               <tagClasses>
@@ -788,10 +790,11 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>versions-maven-plugin</artifactId>
-          <version>2.9.0</version>
+          <version>${versions-maven-plugin.version}</version>
           <configuration>
+            <outputLineWidth>110</outputLineWidth>
             <!-- Expected behavior when using gitflow-release-plugin is to only affect current folder and sub modules, not parent or sibling folders -->
-            <processFromLocalAggregationRoot>false</processFromLocalAggregationRoot>
+            <processFromLocalAggregationRoot>false</processFromLocalAggregationRoot>            
           </configuration>
         </plugin>
 
@@ -816,14 +819,16 @@
         <plugin>
           <groupId>org.sonatype.plugins</groupId>
           <artifactId>nexus-staging-maven-plugin</artifactId>
+          <!-- Stick with version 1.6.8 until https://issues.sonatype.org/browse/NEXUS-31214 is solved -->
           <version>1.6.8</version>
         </plugin>
 
         <plugin>
           <groupId>com.amashchenko.maven.plugin</groupId>
           <artifactId>gitflow-maven-plugin</artifactId>
-          <version>1.17.0</version>
+          <version>1.18.0</version>
           <configuration>
+            <versionsMavenPluginVersion>${versions-maven-plugin.version}</versionsMavenPluginVersion>
             <skipTestProject>${gitflow.skipTestProject}</skipTestProject>
             <verbose>${gitflow.verbose}</verbose>
             <pushRemote>${gitflow.pushRemote}</pushRemote>
