@@ -1024,6 +1024,7 @@
       <properties>
         <unittests.skip>true</unittests.skip>
         <integrationtests.skip>true</integrationtests.skip>
+        <invoker.skip>true</invoker.skip>
         <maven.javadoc.skip>true</maven.javadoc.skip>
       </properties>
     </profile>
