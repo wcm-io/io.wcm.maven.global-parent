@@ -24,7 +24,7 @@
 
   <groupId>io.wcm.maven</groupId>
   <artifactId>io.wcm.maven.global-parent</artifactId>
-  <version>43</version>
+  <version>44</version>
   <packaging>pom</packaging>
 
   <name>io.wcm.maven.global-parent</name>
@@ -93,11 +93,12 @@
     <distribution.releaseRepositoryUrl>https://oss.sonatype.org/service/local/staging/deploy/maven2/</distribution.releaseRepositoryUrl>
 
     <!-- Plugin version -->
-    <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
+    <maven-surefire-plugin.version>3.0.0-M6</maven-surefire-plugin.version>
     <maven-release-plugin.version>3.0.0-M5</maven-release-plugin.version>
-    <spotbugs-plugin.version>4.5.3.0</spotbugs-plugin.version>
+    <spotbugs-plugin.version>4.6.0.0</spotbugs-plugin.version>
     <spotbugs-findsecbugs-plugin.version>1.11.0</spotbugs-findsecbugs-plugin.version>
-    <jacoco-maven-plugin.version>0.8.7</jacoco-maven-plugin.version>
+    <pmd.version>6.45.0</pmd.version>
+    <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
     <versions-maven-plugin.version>2.10.0</versions-maven-plugin.version>
 
     <!-- Set to 'enabled' to activate org.eclipse.jdt.core.compiler.annotation.nullanalysis feature in eclipse settings -->
@@ -130,7 +131,7 @@
       <dependency>
         <groupId>com.github.spotbugs</groupId>
         <artifactId>spotbugs-annotations</artifactId>
-        <version>4.6.0</version>
+        <version>4.7.0</version>
         <exclusions>
           <!-- Do not include JSR-305 annotations - the standard never got accepted, use the nullability annotations from Jetbrains instead -->
           <exclusion>
@@ -157,7 +158,7 @@
       <extension>
         <groupId>io.wcm.maven</groupId>
         <artifactId>io.wcm.maven.global-build-tools</artifactId>
-        <version>26</version>
+        <version>27</version>
       </extension>
 
       <!-- SCP support for deploying sites -->
@@ -397,7 +398,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-antrun-plugin</artifactId>
-          <version>3.0.0</version>
+          <version>3.1.0</version>
         </plugin>
 
         <plugin>
@@ -415,7 +416,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-clean-plugin</artifactId>
-          <version>3.1.0</version>
+          <version>3.2.0</version>
         </plugin>
 
         <plugin>
@@ -538,7 +539,7 @@
             <dependency>
               <groupId>xerces</groupId>
               <artifactId>xercesImpl</artifactId>
-              <version>2.12.1</version>
+              <version>2.12.2</version>
             </dependency>
           </dependencies>
         </plugin>
@@ -564,13 +565,13 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
-          <version>3.3.2</version>
+          <version>3.4.0</version>
         </plugin>
 
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jxr-plugin</artifactId>
-          <version>3.1.1</version>
+          <version>3.2.0</version>
         </plugin>
 
         <plugin>
@@ -610,11 +611,25 @@
             </rulesets>
           </configuration>
           <dependencies>
-            <!-- Workaround for https://issues.apache.org/jira/browse/MPMD-325 -->
             <dependency>
-              <groupId>org.ow2.asm</groupId>
-              <artifactId>asm</artifactId>
-              <version>9.2</version>
+              <groupId>net.sourceforge.pmd</groupId>
+              <artifactId>pmd-core</artifactId>
+              <version>${pmd.version}</version>
+            </dependency>
+            <dependency>
+              <groupId>net.sourceforge.pmd</groupId>
+              <artifactId>pmd-java</artifactId>
+              <version>${pmd.version}</version>
+            </dependency>
+            <dependency>
+              <groupId>net.sourceforge.pmd</groupId>
+              <artifactId>pmd-javascript</artifactId>
+              <version>${pmd.version}</version>
+            </dependency>
+            <dependency>
+              <groupId>net.sourceforge.pmd</groupId>
+              <artifactId>pmd-jsp</artifactId>
+              <version>${pmd.version}</version>
             </dependency>
           </dependencies>
         </plugin>
@@ -622,7 +637,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-project-info-reports-plugin</artifactId>
-          <version>3.2.2</version>
+          <version>3.3.0</version>
         </plugin>
 
         <plugin>
@@ -663,13 +678,14 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-shade-plugin</artifactId>
-          <version>3.2.4</version>
+          <version>3.3.0</version>
         </plugin>
 
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
-          <version>3.11.0</version>
+          <!-- Stick with 3.x version of this plugin for now -->
+          <version>3.12.0</version>
         </plugin>
 
         <plugin>
@@ -706,6 +722,12 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-scm-publish-plugin</artifactId>
           <version>3.1.0</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-invoker-plugin</artifactId>
+          <version>3.2.2</version>
         </plugin>
 
         <plugin>
@@ -794,7 +816,7 @@
           <configuration>
             <outputLineWidth>110</outputLineWidth>
             <!-- Expected behavior when using gitflow-release-plugin is to only affect current folder and sub modules, not parent or sibling folders -->
-            <processFromLocalAggregationRoot>false</processFromLocalAggregationRoot>            
+            <processFromLocalAggregationRoot>false</processFromLocalAggregationRoot>
           </configuration>
         </plugin>
 
@@ -819,7 +841,7 @@
         <plugin>
           <groupId>org.sonatype.plugins</groupId>
           <artifactId>nexus-staging-maven-plugin</artifactId>
-          <!-- Stick with version 1.6.8 until https://issues.sonatype.org/browse/NEXUS-31214 is solved -->
+          <!-- Stick with version 1.6.8 until https://issues.sonatype.org/browse/NEXUS-31214, https://issues.sonatype.org/browse/NEXUS-31301, https://issues.sonatype.org/browse/NEXUS-26993 is solved -->
           <version>1.6.8</version>
         </plugin>
 
@@ -1026,6 +1048,7 @@
       <properties>
         <unittests.skip>true</unittests.skip>
         <integrationtests.skip>true</integrationtests.skip>
+        <invoker.skip>true</invoker.skip>
         <maven.javadoc.skip>true</maven.javadoc.skip>
       </properties>
     </profile>
