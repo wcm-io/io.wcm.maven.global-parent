@@ -99,7 +99,7 @@
     <spotbugs-findsecbugs-plugin.version>1.11.0</spotbugs-findsecbugs-plugin.version>
     <pmd.version>6.45.0</pmd.version>
     <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
-    <versions-maven-plugin.version>2.10.0</versions-maven-plugin.version>
+    <versions-maven-plugin.version>2.11.0</versions-maven-plugin.version>
 
     <!-- Set to 'enabled' to activate org.eclipse.jdt.core.compiler.annotation.nullanalysis feature in eclipse settings -->
     <eclipse.settings.nullanalysis>disabled</eclipse.settings.nullanalysis>
@@ -817,6 +817,8 @@
             <outputLineWidth>110</outputLineWidth>
             <!-- Expected behavior when using gitflow-release-plugin is to only affect current folder and sub modules, not parent or sibling folders -->
             <processFromLocalAggregationRoot>false</processFromLocalAggregationRoot>
+            <!-- Do not report dependency updates for transitive dependencies imported from "BOM" dependencies. -->
+            <processDependencyManagementTransitive>false</processDependencyManagementTransitive>
           </configuration>
         </plugin>
 
