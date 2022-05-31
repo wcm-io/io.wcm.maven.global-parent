@@ -97,7 +97,7 @@
     <maven-release-plugin.version>3.0.0-M5</maven-release-plugin.version>
     <spotbugs-plugin.version>4.7.0.0</spotbugs-plugin.version>
     <spotbugs-findsecbugs-plugin.version>1.11.0</spotbugs-findsecbugs-plugin.version>
-    <pmd.version>6.45.0</pmd.version>
+    <pmd.version>6.46.0</pmd.version>
     <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
     <versions-maven-plugin.version>2.11.0</versions-maven-plugin.version>
 
@@ -727,7 +727,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-invoker-plugin</artifactId>
-          <version>3.2.2</version>
+          <version>3.3.0</version>
         </plugin>
 
         <plugin>
