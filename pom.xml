@@ -24,7 +24,7 @@
 
   <groupId>io.wcm.maven</groupId>
   <artifactId>io.wcm.maven.global-parent</artifactId>
-  <version>44</version>
+  <version>45</version>
   <packaging>pom</packaging>
 
   <name>io.wcm.maven.global-parent</name>
@@ -93,13 +93,13 @@
     <distribution.releaseRepositoryUrl>https://oss.sonatype.org/service/local/staging/deploy/maven2/</distribution.releaseRepositoryUrl>
 
     <!-- Plugin version -->
-    <maven-surefire-plugin.version>3.0.0-M6</maven-surefire-plugin.version>
-    <maven-release-plugin.version>3.0.0-M5</maven-release-plugin.version>
-    <spotbugs-plugin.version>4.6.0.0</spotbugs-plugin.version>
+    <maven-surefire-plugin.version>3.0.0-M7</maven-surefire-plugin.version>
+    <maven-release-plugin.version>3.0.0-M6</maven-release-plugin.version>
+    <spotbugs-plugin.version>4.7.0.0</spotbugs-plugin.version>
     <spotbugs-findsecbugs-plugin.version>1.11.0</spotbugs-findsecbugs-plugin.version>
-    <pmd.version>6.45.0</pmd.version>
+    <pmd.version>6.46.0</pmd.version>
     <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
-    <versions-maven-plugin.version>2.10.0</versions-maven-plugin.version>
+    <versions-maven-plugin.version>2.11.0</versions-maven-plugin.version>
 
     <!-- Set to 'enabled' to activate org.eclipse.jdt.core.compiler.annotation.nullanalysis feature in eclipse settings -->
     <eclipse.settings.nullanalysis>disabled</eclipse.settings.nullanalysis>
@@ -528,7 +528,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-enforcer-plugin</artifactId>
-          <version>3.0.0</version>
+          <version>3.1.0</version>
         </plugin>
 
         <plugin>
@@ -600,7 +600,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-pmd-plugin</artifactId>
-          <version>3.16.0</version>
+          <version>3.17.0</version>
           <configuration>
             <targetJdk>${java.version}</targetJdk>
             <format>xml</format>
@@ -653,14 +653,6 @@
             <!-- <releaseProfiles>release-profile</releaseProfiles> should be used but is currently broken MRELEASE-1038/MRELEASE-1042 -->
             <useReleaseProfile>true</useReleaseProfile>
           </configuration>
-          <!-- fix for http://jira.codehaus.org/browse/MRELEASE-812, still occuring with 2.5 -->
-          <dependencies>
-            <dependency>
-              <groupId>org.apache.maven.scm</groupId>
-              <artifactId>maven-scm-provider-gitexe</artifactId>
-              <version>2.0.0-M1</version>
-            </dependency>
-          </dependencies>
         </plugin>
 
         <plugin>
@@ -727,7 +719,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-invoker-plugin</artifactId>
-          <version>3.2.2</version>
+          <version>3.3.0</version>
         </plugin>
 
         <plugin>
@@ -817,6 +809,8 @@
             <outputLineWidth>110</outputLineWidth>
             <!-- Expected behavior when using gitflow-release-plugin is to only affect current folder and sub modules, not parent or sibling folders -->
             <processFromLocalAggregationRoot>false</processFromLocalAggregationRoot>
+            <!-- Do not report dependency updates for transitive dependencies imported from "BOM" dependencies. -->
+            <processDependencyManagementTransitive>false</processDependencyManagementTransitive>
           </configuration>
         </plugin>
 
