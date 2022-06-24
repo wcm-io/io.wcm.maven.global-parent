@@ -592,7 +592,7 @@
               <groupId>com.puppycrawl.tools</groupId>
               <artifactId>checkstyle</artifactId>
               <!-- Stick with version 9.x because since 10.x Java 11 is mandatory minimum requirement -->
-              <version>9.3</version>
+              <version>10.3</version>
             </dependency>
           </dependencies>
         </plugin>
