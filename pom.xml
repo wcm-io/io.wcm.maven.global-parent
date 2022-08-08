@@ -95,7 +95,7 @@
     <!-- Plugin version -->
     <maven-surefire-plugin.version>3.0.0-M7</maven-surefire-plugin.version>
     <maven-release-plugin.version>3.0.0-M6</maven-release-plugin.version>
-    <spotbugs-plugin.version>4.7.1.0</spotbugs-plugin.version>
+    <spotbugs-plugin.version>4.7.1.1</spotbugs-plugin.version>
     <spotbugs-findsecbugs-plugin.version>1.12.0</spotbugs-findsecbugs-plugin.version>
     <pmd.version>6.47.0</pmd.version>
     <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
@@ -404,7 +404,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-assembly-plugin</artifactId>
-          <version>3.4.0</version>
+          <version>3.4.2</version>
         </plugin>
 
         <plugin>
@@ -434,7 +434,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-deploy-plugin</artifactId>
-          <version>3.0.0-M2</version>
+          <version>3.0.0</version>
         </plugin>
 
         <plugin>
@@ -553,7 +553,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-install-plugin</artifactId>
-          <version>3.0.0-M1</version>
+          <version>3.0.1</version>
         </plugin>
 
         <plugin>
@@ -637,7 +637,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-project-info-reports-plugin</artifactId>
-          <version>3.3.0</version>
+          <version>3.4.0</version>
         </plugin>
 
         <plugin>
@@ -658,7 +658,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-resources-plugin</artifactId>
-          <version>3.2.0</version>
+          <version>3.3.0</version>
         </plugin>
 
         <plugin>
@@ -677,7 +677,7 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
           <!-- Stick with 3.x version of this plugin for now -->
-          <version>3.12.0</version>
+          <version>3.12.1</version>
         </plugin>
 
         <plugin>
