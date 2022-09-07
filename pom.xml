@@ -404,7 +404,8 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-assembly-plugin</artifactId>
-          <version>3.4.2</version>
+          <!-- Stick with version 3.3.0 until https://issues.apache.org/jira/browse/MASSEMBLY-965 is fixed -->
+          <version>3.3.0</version>
         </plugin>
 
         <plugin>
