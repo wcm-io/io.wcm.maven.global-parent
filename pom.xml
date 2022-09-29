@@ -441,7 +441,7 @@
         <plugin>
           <groupId>io.wcm.devops.maven.plugins</groupId>
           <artifactId>eclipse-maven-plugin</artifactId>
-          <version>3.1.0</version>
+          <version>3.2.0</version>
           <configuration>
             <downloadSources>true</downloadSources>
             <useProjectReferences>false</useProjectReferences>
