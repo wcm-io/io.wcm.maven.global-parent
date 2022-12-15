@@ -24,7 +24,7 @@
 
   <groupId>io.wcm.maven</groupId>
   <artifactId>io.wcm.maven.global-parent</artifactId>
-  <version>47</version>
+  <version>48</version>
   <packaging>pom</packaging>
 
   <name>io.wcm.maven.global-parent</name>
@@ -94,12 +94,12 @@
 
     <!-- Plugin version -->
     <maven-surefire-plugin.version>3.0.0-M7</maven-surefire-plugin.version>
-    <maven-release-plugin.version>3.0.0-M6</maven-release-plugin.version>
-    <spotbugs-plugin.version>4.7.2.0</spotbugs-plugin.version>
+    <maven-release-plugin.version>3.0.0-M7</maven-release-plugin.version>
+    <spotbugs-plugin.version>4.7.3.0</spotbugs-plugin.version>
     <spotbugs-findsecbugs-plugin.version>1.12.0</spotbugs-findsecbugs-plugin.version>
-    <pmd.version>6.49.0</pmd.version>
+    <pmd.version>6.52.0</pmd.version>
     <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
-    <versions-maven-plugin.version>2.11.0</versions-maven-plugin.version>
+    <versions-maven-plugin.version>2.13.0</versions-maven-plugin.version>
 
     <!-- Set to 'enabled' to activate org.eclipse.jdt.core.compiler.annotation.nullanalysis feature in eclipse settings -->
     <eclipse.settings.nullanalysis>disabled</eclipse.settings.nullanalysis>
@@ -120,7 +120,7 @@
       <dependency>
         <groupId>org.jetbrains</groupId>
         <artifactId>annotations</artifactId>
-        <version>23.0.0</version>
+        <version>23.1.0</version>
       </dependency>
 
       <!--
@@ -131,7 +131,7 @@
       <dependency>
         <groupId>com.github.spotbugs</groupId>
         <artifactId>spotbugs-annotations</artifactId>
-        <version>4.7.2</version>
+        <version>4.7.3</version>
         <exclusions>
           <!-- Do not include JSR-305 annotations - the standard never got accepted, use the nullability annotations from Jetbrains instead -->
           <exclusion>
@@ -429,7 +429,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-dependency-plugin</artifactId>
-          <version>3.3.0</version>
+          <version>3.4.0</version>
         </plugin>
 
         <plugin>
@@ -554,7 +554,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-install-plugin</artifactId>
-          <version>3.0.1</version>
+          <version>3.1.0</version>
         </plugin>
 
         <plugin>
@@ -665,13 +665,13 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-scm-plugin</artifactId>
-          <version>2.0.0-M2</version>
+          <version>2.0.0-M3</version>
         </plugin>
 
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-shade-plugin</artifactId>
-          <version>3.4.0</version>
+          <version>3.4.1</version>
         </plugin>
 
         <plugin>
@@ -843,7 +843,7 @@
         <plugin>
           <groupId>com.amashchenko.maven.plugin</groupId>
           <artifactId>gitflow-maven-plugin</artifactId>
-          <version>1.18.0</version>
+          <version>1.19.0</version>
           <configuration>
             <versionsMavenPluginVersion>${versions-maven-plugin.version}</versionsMavenPluginVersion>
             <skipTestProject>${gitflow.skipTestProject}</skipTestProject>
@@ -873,6 +873,13 @@
             <autoVersionSubmodules>true</autoVersionSubmodules>
             <eol>lf</eol>
           </configuration>
+          <dependencies>
+            <dependency>
+              <groupId>com.jcraft</groupId>
+              <artifactId>jsch</artifactId>
+              <version>0.1.55</version>
+            </dependency>
+          </dependencies>
         </plugin>
 
       </plugins>

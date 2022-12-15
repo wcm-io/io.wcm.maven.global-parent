@@ -23,6 +23,15 @@
     xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 http://maven.apache.org/plugins/maven-changes-plugin/xsd/changes-1.0.0.xsd">
   <body>
 
+    <release version="48" date="2022-12-15">
+      <action type="update" dev="sseifert">
+        Update plugins and dependencies to latest versions.
+      </action>
+      <action type="update" dev="trichter">
+        Update com.jcraft:jsch to 0.1.55 for jgitflow-maven-plugin in order to support stronger cryptographic standards.
+      </action>
+    </release>
+
     <release version="47" date="2022-09-30">
       <action type="update" dev="sseifert">
         Update plugins and dependencies to latest versions.
