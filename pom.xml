@@ -688,7 +688,8 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
-          <version>4.0.0-M4</version>
+          <!-- Stick with 3.x version of this plugin for now -->
+          <version>3.12.1</version>
         </plugin>
 
         <plugin>
