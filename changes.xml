@@ -23,7 +23,7 @@
     xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 http://maven.apache.org/plugins/maven-changes-plugin/xsd/changes-1.0.0.xsd">
   <body>
 
-    <release version="50" date="not released">
+    <release version="50" date="2023-01-12">
       <action type="update" dev="sseifert"><![CDATA[
         <b>Minimum Java Version supported is Java 11. Java 8 is no longer supported.</b>
       ]]></action>
