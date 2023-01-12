@@ -92,7 +92,7 @@
     <distribution.releaseRepositoryUrl>https://oss.sonatype.org/service/local/staging/deploy/maven2/</distribution.releaseRepositoryUrl>
 
     <!-- Plugin version -->
-    <maven-surefire-plugin.version>3.0.0-M7</maven-surefire-plugin.version>
+    <maven-surefire-plugin.version>3.0.0-M8</maven-surefire-plugin.version>
     <maven-release-plugin.version>3.0.0-M7</maven-release-plugin.version>
     <spotbugs-plugin.version>4.7.3.0</spotbugs-plugin.version>
     <spotbugs-findsecbugs-plugin.version>1.12.0</spotbugs-findsecbugs-plugin.version>
@@ -119,7 +119,7 @@
       <dependency>
         <groupId>org.jetbrains</groupId>
         <artifactId>annotations</artifactId>
-        <version>23.1.0</version>
+        <version>24.0.0</version>
       </dependency>
 
       <!--
@@ -453,7 +453,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-dependency-plugin</artifactId>
-          <version>3.4.0</version>
+          <version>3.5.0</version>
         </plugin>
 
         <plugin>
@@ -609,7 +609,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-checkstyle-plugin</artifactId>
-          <version>3.2.0</version>
+          <version>3.2.1</version>
           <configuration>
             <configLocation>global-build-tools/checkstyle.xml</configLocation>
             <suppressionsFileExpression>checkstyle.suppressions.file</suppressionsFileExpression>
@@ -623,7 +623,7 @@
             <dependency>
               <groupId>com.puppycrawl.tools</groupId>
               <artifactId>checkstyle</artifactId>
-              <version>10.5.0</version>
+              <version>10.6.0</version>
             </dependency>
           </dependencies>
         </plugin>
@@ -631,7 +631,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-pmd-plugin</artifactId>
-          <version>3.19.0</version>
+          <version>3.20.0</version>
           <configuration>
             <targetJdk>${java.version}</targetJdk>
             <format>xml</format>
@@ -668,7 +668,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-project-info-reports-plugin</artifactId>
-          <version>3.4.1</version>
+          <version>3.4.2</version>
         </plugin>
 
         <plugin>
