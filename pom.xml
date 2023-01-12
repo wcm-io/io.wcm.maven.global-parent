@@ -24,7 +24,7 @@
 
   <groupId>io.wcm.maven</groupId>
   <artifactId>io.wcm.maven.global-parent</artifactId>
-  <version>48</version>
+  <version>50</version>
   <packaging>pom</packaging>
 
   <name>io.wcm.maven.global-parent</name>
@@ -72,11 +72,10 @@
     <integrationtests.skip>${maven.test.skip}</integrationtests.skip>
 
     <!-- Java Version to build against (can be overridden by inheriting poms) -->
-    <!-- Use "1.8" for Java 8, and "11", "17" ... for Java Versions >= 9 -->
-    <java.version>1.8</java.version>
+    <!-- Java 11 is the minimum version, Java 8 is no longer supported -->
+    <java.version>11</java.version>
     <build.compiler.source>${java.version}</build.compiler.source>
     <build.compiler.target>${java.version}</build.compiler.target>
-    <!-- If java.version is set to "1.8", set this variable to "8" -->
     <build.compiler.release>${build.compiler.target}</build.compiler.release>
 
     <!-- pmd needs this as a global property, even in mvn 3 - may be fixed some day -->
@@ -93,13 +92,13 @@
     <distribution.releaseRepositoryUrl>https://oss.sonatype.org/service/local/staging/deploy/maven2/</distribution.releaseRepositoryUrl>
 
     <!-- Plugin version -->
-    <maven-surefire-plugin.version>3.0.0-M7</maven-surefire-plugin.version>
+    <maven-surefire-plugin.version>3.0.0-M8</maven-surefire-plugin.version>
     <maven-release-plugin.version>3.0.0-M7</maven-release-plugin.version>
     <spotbugs-plugin.version>4.7.3.0</spotbugs-plugin.version>
     <spotbugs-findsecbugs-plugin.version>1.12.0</spotbugs-findsecbugs-plugin.version>
-    <pmd.version>6.52.0</pmd.version>
+    <pmd.version>6.53.0</pmd.version>
     <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
-    <versions-maven-plugin.version>2.13.0</versions-maven-plugin.version>
+    <versions-maven-plugin.version>2.14.2</versions-maven-plugin.version>
 
     <!-- Set to 'enabled' to activate org.eclipse.jdt.core.compiler.annotation.nullanalysis feature in eclipse settings -->
     <eclipse.settings.nullanalysis>disabled</eclipse.settings.nullanalysis>
@@ -120,7 +119,7 @@
       <dependency>
         <groupId>org.jetbrains</groupId>
         <artifactId>annotations</artifactId>
-        <version>23.1.0</version>
+        <version>24.0.0</version>
       </dependency>
 
       <!--
@@ -165,7 +164,7 @@
       <extension>
         <groupId>org.apache.maven.wagon</groupId>
         <artifactId>wagon-ssh</artifactId>
-        <version>3.5.2</version>
+        <version>3.5.3</version>
       </extension>
 
     </extensions>
@@ -259,6 +258,19 @@
         <artifactId>maven-enforcer-plugin</artifactId>
         <executions>
           <execution>
+            <id>enforce-default-java-min</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <requireJavaVersion>
+                  <version>[11,]</version>
+                </requireJavaVersion>
+              </rules>
+            </configuration>
+          </execution>
+          <execution>
             <id>enforce-default</id>
             <goals>
               <goal>enforce</goal>
@@ -348,6 +360,18 @@
               <fail>false</fail>
             </configuration>
           </execution>
+          <execution>
+            <!-- all local dependencies must have an explicit scope set, see https://github.com/apache/sling-maven-enforcer-rules -->
+            <id>enforce-explicit-scope</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <requireExplicitDependencyScope implementation="org.apache.sling.maven.enforcer.RequireExplicitDependencyScope" />
+              </rules>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
 
@@ -429,7 +453,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-dependency-plugin</artifactId>
-          <version>3.4.0</version>
+          <version>3.5.0</version>
         </plugin>
 
         <plugin>
@@ -530,6 +554,13 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-enforcer-plugin</artifactId>
           <version>3.1.0</version>
+          <dependencies>
+            <dependency>
+              <groupId>org.apache.sling</groupId>
+              <artifactId>maven-enforcer-rules</artifactId>
+              <version>1.1.0</version>
+            </dependency>
+          </dependencies>
         </plugin>
 
         <plugin>
@@ -578,7 +609,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-checkstyle-plugin</artifactId>
-          <version>3.2.0</version>
+          <version>3.2.1</version>
           <configuration>
             <configLocation>global-build-tools/checkstyle.xml</configLocation>
             <suppressionsFileExpression>checkstyle.suppressions.file</suppressionsFileExpression>
@@ -592,8 +623,7 @@
             <dependency>
               <groupId>com.puppycrawl.tools</groupId>
               <artifactId>checkstyle</artifactId>
-              <!-- Stick with version 9.x because since 10.x Java 11 is mandatory minimum requirement -->
-              <version>9.3</version>
+              <version>10.6.0</version>
             </dependency>
           </dependencies>
         </plugin>
@@ -601,7 +631,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-pmd-plugin</artifactId>
-          <version>3.19.0</version>
+          <version>3.20.0</version>
           <configuration>
             <targetJdk>${java.version}</targetJdk>
             <format>xml</format>
@@ -638,7 +668,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-project-info-reports-plugin</artifactId>
-          <version>3.4.1</version>
+          <version>3.4.2</version>
         </plugin>
 
         <plugin>
@@ -720,7 +750,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-invoker-plugin</artifactId>
-          <version>3.3.0</version>
+          <version>3.4.0</version>
         </plugin>
 
         <plugin>
