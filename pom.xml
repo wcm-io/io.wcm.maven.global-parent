@@ -872,7 +872,7 @@
         <plugin>
           <groupId>com.amashchenko.maven.plugin</groupId>
           <artifactId>gitflow-maven-plugin</artifactId>
-          <version>1.19.0</version>
+          <version>1.20.0</version>
           <configuration>
             <versionsMavenPluginVersion>${versions-maven-plugin.version}</versionsMavenPluginVersion>
             <skipTestProject>${gitflow.skipTestProject}</skipTestProject>
