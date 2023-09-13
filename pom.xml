@@ -858,8 +858,7 @@
         <plugin>
           <groupId>org.sonatype.plugins</groupId>
           <artifactId>nexus-staging-maven-plugin</artifactId>
-          <!-- Stick with version 1.6.8 until https://issues.sonatype.org/browse/NEXUS-31214, https://issues.sonatype.org/browse/NEXUS-31301, https://issues.sonatype.org/browse/NEXUS-26993 is solved -->
-          <version>1.6.8</version>
+          <version>1.6.13</version>
         </plugin>
 
         <plugin>
