@@ -97,7 +97,7 @@
     <spotbugs-plugin.version>4.7.3.6</spotbugs-plugin.version>
     <spotbugs-findsecbugs-plugin.version>1.12.0</spotbugs-findsecbugs-plugin.version>
     <pmd.version>6.55.0</pmd.version>
-    <jacoco-maven-plugin.version>0.8.10</jacoco-maven-plugin.version>
+    <jacoco-maven-plugin.version>0.8.11</jacoco-maven-plugin.version>
     <versions-maven-plugin.version>2.16.1</versions-maven-plugin.version>
 
     <!-- Set to 'enabled' to activate org.eclipse.jdt.core.compiler.annotation.nullanalysis feature in eclipse settings -->
