@@ -23,6 +23,15 @@
     xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 http://maven.apache.org/plugins/maven-changes-plugin/xsd/changes-1.0.0.xsd">
   <body>
 
+    <release version="55" date="2023-11-20">
+      <action type="update" dev="sseifert">
+        Update plugins and dependencies to latest versions.
+      </action>
+      <action type="update" dev="sseifert">
+        Update to global-build-tools 29.
+      </action>
+    </release>
+
     <release version="54" date="2023-10-18">
       <action type="update" dev="sseifert">
         Update plugins and dependencies to latest versions.
