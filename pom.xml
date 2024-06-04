@@ -1000,6 +1000,14 @@
             <ruleset>global-build-tools/pmd-ruleset.xml</ruleset>
           </rulesets>
         </configuration>
+        <reportSets>
+          <reportSet>
+            <reports>
+              <report>pmd</report>
+              <report>cpd</report>
+            </reports>
+          </reportSet>
+        </reportSets>
       </plugin>
 
       <!-- taglist -->

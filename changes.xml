@@ -27,6 +27,9 @@
       <action type="update" dev="sseifert">
         Update plugins and dependencies to latest versions.
       </action>
+      <action type="update" dev="sseifert">
+        maven-pmd-plugin: Do not generate aggregate reports.
+      </action>
     </release>
 
     <release version="56" date="2024-01-25">
