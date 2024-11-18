@@ -24,7 +24,7 @@
 
   <groupId>io.wcm.maven</groupId>
   <artifactId>io.wcm.maven.global-parent</artifactId>
-  <version>58</version>
+  <version>59</version>
   <packaging>pom</packaging>
 
   <name>io.wcm.maven.global-parent</name>
@@ -92,14 +92,14 @@
     <distribution.releaseRepositoryUrl>https://oss.sonatype.org/service/local/staging/deploy/maven2/</distribution.releaseRepositoryUrl>
 
     <!-- Plugin version -->
-    <maven-surefire-plugin.version>3.5.0</maven-surefire-plugin.version>
+    <maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
     <maven-release-plugin.version>3.1.1</maven-release-plugin.version>
-    <spotbugs-plugin.version>4.8.6.4</spotbugs-plugin.version>
+    <spotbugs-plugin.version>4.8.6.6</spotbugs-plugin.version>
     <!-- Stick with version 1.12.0 until the fix for https://github.com/find-sec-bugs/find-sec-bugs/issues/727 is released -->
     <spotbugs-findsecbugs-plugin.version>1.12.0</spotbugs-findsecbugs-plugin.version>
-    <pmd.version>7.5.0</pmd.version>
+    <pmd.version>7.7.0</pmd.version>
     <jacoco-maven-plugin.version>0.8.12</jacoco-maven-plugin.version>
-    <versions-maven-plugin.version>2.17.1</versions-maven-plugin.version>
+    <versions-maven-plugin.version>2.18.0</versions-maven-plugin.version>
 
     <!-- Set to 'enabled' to activate org.eclipse.jdt.core.compiler.annotation.nullanalysis feature in eclipse settings -->
     <eclipse.settings.nullanalysis>disabled</eclipse.settings.nullanalysis>
@@ -120,7 +120,7 @@
       <dependency>
         <groupId>org.jetbrains</groupId>
         <artifactId>annotations</artifactId>
-        <version>25.0.0</version>
+        <version>26.0.1</version>
       </dependency>
 
       <!--
@@ -158,7 +158,7 @@
       <extension>
         <groupId>io.wcm.maven</groupId>
         <artifactId>io.wcm.maven.global-build-tools</artifactId>
-        <version>29</version>
+        <version>30</version>
       </extension>
 
       <!-- SCP support for deploying sites -->
@@ -453,7 +453,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-dependency-plugin</artifactId>
-          <version>3.8.0</version>
+          <version>3.8.1</version>
         </plugin>
 
         <plugin>
@@ -572,7 +572,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-gpg-plugin</artifactId>
-          <version>3.2.6</version>
+          <version>3.2.7</version>
         </plugin>
 
         <plugin>
@@ -590,19 +590,19 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
-          <version>3.10.0</version>
+          <version>3.11.1</version>
         </plugin>
 
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jxr-plugin</artifactId>
-          <version>3.5.0</version>
+          <version>3.6.0</version>
         </plugin>
 
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-checkstyle-plugin</artifactId>
-          <version>3.5.0</version>
+          <version>3.6.0</version>
           <configuration>
             <configLocation>global-build-tools/checkstyle.xml</configLocation>
             <suppressionsFileExpression>checkstyle.suppressions.file</suppressionsFileExpression>
@@ -616,7 +616,7 @@
             <dependency>
               <groupId>com.puppycrawl.tools</groupId>
               <artifactId>checkstyle</artifactId>
-              <version>10.18.1</version>
+              <version>10.20.1</version>
             </dependency>
           </dependencies>
         </plugin>
@@ -624,7 +624,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-pmd-plugin</artifactId>
-          <version>3.25.0</version>
+          <version>3.26.0</version>
           <configuration>
             <targetJdk>${java.version}</targetJdk>
             <format>xml</format>
@@ -661,7 +661,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-project-info-reports-plugin</artifactId>
-          <version>3.7.0</version>
+          <version>3.8.0</version>
         </plugin>
 
         <plugin>
@@ -701,7 +701,7 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
           <!-- Stick with 3.x version of this plugin for now -->
-          <version>3.20.0</version>
+          <version>3.21.0</version>
         </plugin>
 
         <plugin>
@@ -743,7 +743,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-invoker-plugin</artifactId>
-          <version>3.8.0</version>
+          <version>3.8.1</version>
         </plugin>
 
         <plugin>
@@ -779,13 +779,13 @@
         <plugin>
           <groupId>org.sonarsource.scanner.maven</groupId>
           <artifactId>sonar-maven-plugin</artifactId>
-          <version>4.0.0.4121</version>
+          <version>5.0.0.4389</version>
         </plugin>
 
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>taglist-maven-plugin</artifactId>
-          <version>3.1.0</version>
+          <version>3.2.1</version>
           <configuration>
             <tagListOptions>
               <tagClasses>
