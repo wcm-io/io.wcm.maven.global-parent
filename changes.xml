@@ -19,9 +19,19 @@
   #L%
   -->
 
-<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/changes/1.0.0"
-    xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 http://maven.apache.org/plugins/maven-changes-plugin/xsd/changes-1.0.0.xsd">
+<document xmlns="http://maven.apache.org/changes/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/changes/2.0.0 https://maven.apache.org/xsd/changes-2.0.0.xsd">
   <body>
+
+    <release version="61" date="2025-01-13">
+      <action type="update" dev="sseifert">
+        Update plugins and dependencies to latest versions.
+      </action>
+      <action type="update" dev="sseifert"><![CDATA[
+        Update to Maven Changes Plugin 3.x, see <a href="https://maven.apache.org/plugins/maven-changes-plugin/">Apache Maven Changes Plugin</a> for migration details.
+      ]]></action>
+    </release>
 
     <release version="60" date="2024-12-09">
       <action type="update" dev="sseifert">
