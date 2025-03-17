@@ -10,10 +10,10 @@
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch"],
-      "automerge": true,
-      "ignoreDeps": [
-        "com.h3xstream.findsecbugs:findsecbugs-plugin"
-      ]    
+      "matchPackageNames": [
+        "!com.h3xstream.findsecbugs:findsecbugs-plugin"
+      ],
+      "automerge": true
     }
   ]
 }
