@@ -1,0 +1,15 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "github>wcm-io/renovate-config:maven"
+  ],
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchPackageNames": [
+        "!com.h3xstream.findsecbugs:findsecbugs-plugin"
+      ],
+      "automerge": true
+    }
+  ]
+}
