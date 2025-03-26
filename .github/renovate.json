@@ -9,7 +9,8 @@
       "matchPackageNames": [
         "!com.h3xstream.findsecbugs:findsecbugs-plugin"
       ],
-      "automerge": true
+      "automerge": true,
+      "addLabels": ["automerge"]
     }
   ]
 }
