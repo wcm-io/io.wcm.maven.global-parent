@@ -24,7 +24,7 @@
     xsi:schemaLocation="http://maven.apache.org/changes/2.0.0 https://maven.apache.org/xsd/changes-2.0.0.xsd">
   <body>
 
-    <release version="63" date="not released">
+    <release version="63" date="2025-04-12">
       <action type="update" dev="sseifert">
         Switch from Sonatype OSSRH to Sonatype Central.
         Replace org.sonatype.plugins:nexus-staging-maven-plugin with org.sonatype.central:central-publishing-maven-plugin.
