@@ -123,6 +123,11 @@
 
   <servers>
     <server>
+      <id>sonatype-central</id>
+      <username>${env.SONATYPE_USERNAME}</username>
+      <password>${env.SONATYPE_PASSWORD}</password>
+    </server>
+    <server>
       <id>sonatype-central-snapshots</id>
       <username>${env.SONATYPE_USERNAME}</username>
       <password>${env.SONATYPE_PASSWORD}</password>
