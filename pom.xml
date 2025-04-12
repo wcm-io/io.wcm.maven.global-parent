@@ -86,7 +86,7 @@
     <maven.min-version>3.8.6</maven.min-version>
 
     <!-- distribution settings -->
-    <distribution.snapshotRepositoryId>sonatype-central</distribution.snapshotRepositoryId>
+    <distribution.snapshotRepositoryId>sonatype-central-snapshots</distribution.snapshotRepositoryId>
     <distribution.snapshotRepositoryUrl>https://central.sonatype.com/repository/maven-snapshots</distribution.snapshotRepositoryUrl>
     <distribution.releaseRepositoryId>sonatype-central</distribution.releaseRepositoryId>
     <distribution.releaseRepositoryUrl>https://central.sonatype.com</distribution.releaseRepositoryUrl>
