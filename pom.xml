@@ -607,7 +607,6 @@
             <configLocation>global-build-tools/checkstyle.xml</configLocation>
             <suppressionsFileExpression>checkstyle.suppressions.file</suppressionsFileExpression>
             <suppressionsLocation>global-build-tools/checkstyle-suppressions.xml</suppressionsLocation>
-            <encoding>${project.build.sourceEncoding}</encoding>
             <enableRulesSummary>false</enableRulesSummary>
             <linkXRef>true</linkXRef>
             <excludes>**/target/**</excludes>
@@ -974,7 +973,6 @@
           <configLocation>global-build-tools/checkstyle.xml</configLocation>
           <suppressionsFileExpression>checkstyle.suppressions.file</suppressionsFileExpression>
           <suppressionsLocation>global-build-tools/checkstyle-suppressions.xml</suppressionsLocation>
-          <encoding>${project.build.sourceEncoding}</encoding>
           <enableRulesSummary>false</enableRulesSummary>
           <linkXRef>true</linkXRef>
           <excludes>**/target/**</excludes>
