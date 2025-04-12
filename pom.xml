@@ -86,10 +86,10 @@
     <maven.min-version>3.8.6</maven.min-version>
 
     <!-- distribution settings -->
-    <distribution.snapshotRepositoryId>ossrh</distribution.snapshotRepositoryId>
-    <distribution.snapshotRepositoryUrl>https://oss.sonatype.org/content/repositories/snapshots</distribution.snapshotRepositoryUrl>
-    <distribution.releaseRepositoryId>ossrh</distribution.releaseRepositoryId>
-    <distribution.releaseRepositoryUrl>https://oss.sonatype.org/service/local/staging/deploy/maven2/</distribution.releaseRepositoryUrl>
+    <distribution.snapshotRepositoryId>central</distribution.snapshotRepositoryId>
+    <distribution.snapshotRepositoryUrl>https://central.sonatype.com/repository/maven-snapshots</distribution.snapshotRepositoryUrl>
+    <distribution.releaseRepositoryId>central</distribution.releaseRepositoryId>
+    <distribution.releaseRepositoryUrl>https://central.sonatype.com</distribution.releaseRepositoryUrl>
 
     <!-- Plugin version -->
     <maven-surefire-plugin.version>3.5.3</maven-surefire-plugin.version>
@@ -857,9 +857,9 @@
         </plugin>
 
         <plugin>
-          <groupId>org.sonatype.plugins</groupId>
-          <artifactId>nexus-staging-maven-plugin</artifactId>
-          <version>1.7.0</version>
+          <groupId>org.sonatype.central</groupId>
+          <artifactId>central-publishing-maven-plugin</artifactId>
+          <version>0.7.0</version>
         </plugin>
 
         <plugin>
@@ -1268,15 +1268,12 @@
           </plugin>
           <!-- configure staging process at sonatype (only for this pom, not inherited) -->
           <plugin>
-            <groupId>org.sonatype.plugins</groupId>
-            <artifactId>nexus-staging-maven-plugin</artifactId>
+            <groupId>org.sonatype.central</groupId>
+            <artifactId>central-publishing-maven-plugin</artifactId>
             <inherited>false</inherited>
             <extensions>true</extensions>
             <configuration>
-              <serverId>ossrh</serverId>
-              <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-              <!-- Deployed artifacts should go to staging to be reviewed before publish -->
-              <autoReleaseAfterClose>false</autoReleaseAfterClose>
+              <publishingServerId>central</publishingServerId>
             </configuration>
           </plugin>
         </plugins>
