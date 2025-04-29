@@ -40,26 +40,6 @@
 
   <inceptionYear>2014</inceptionYear>
 
-  <organization>
-    <name>wcm.io</name>
-    <url>https://wcm.io</url>
-  </organization>
-
-  <licenses>
-    <license>
-      <name>The Apache Software License, Version 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-    </license>
-  </licenses>
-
-  <developers>
-    <developer>
-      <name>wcm.io Community</name>
-      <organization>wcm.io</organization>
-      <organizationUrl>https://wcm.io</organizationUrl>
-    </developer>
-  </developers>
-
   <properties>
 
     <!-- define default encoding for all source/resource files -->
@@ -1381,6 +1361,26 @@
     </profile>
 
   </profiles>
+
+  <organization>
+    <name>wcm.io</name>
+    <url>https://wcm.io</url>
+  </organization>
+
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <name>wcm.io Community</name>
+      <organization>wcm.io</organization>
+      <organizationUrl>https://wcm.io</organizationUrl>
+    </developer>
+  </developers>
 
   <distributionManagement>
     <repository>
