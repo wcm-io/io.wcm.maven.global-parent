@@ -24,7 +24,7 @@
 
   <groupId>io.wcm.maven</groupId>
   <artifactId>io.wcm.maven.global-parent</artifactId>
-  <version>64</version>
+  <version>65</version>
   <packaging>pom</packaging>
 
   <name>io.wcm.maven.global-parent</name>
@@ -39,26 +39,6 @@
   </scm>
 
   <inceptionYear>2014</inceptionYear>
-
-  <organization>
-    <name>wcm.io</name>
-    <url>https://wcm.io</url>
-  </organization>
-
-  <licenses>
-    <license>
-      <name>The Apache Software License, Version 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-    </license>
-  </licenses>
-
-  <developers>
-    <developer>
-      <name>wcm.io Community</name>
-      <organization>wcm.io</organization>
-      <organizationUrl>https://wcm.io</organizationUrl>
-    </developer>
-  </developers>
 
   <properties>
 
@@ -435,7 +415,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-changes-plugin</artifactId>
-          <version>3.0.0-M2</version>
+          <version>3.0.0-M3</version>
         </plugin>
 
         <plugin>
@@ -615,7 +595,7 @@
             <dependency>
               <groupId>com.puppycrawl.tools</groupId>
               <artifactId>checkstyle</artifactId>
-              <version>10.23.1</version>
+              <version>10.24.0</version>
             </dependency>
           </dependencies>
         </plugin>
@@ -1381,6 +1361,26 @@
     </profile>
 
   </profiles>
+
+  <organization>
+    <name>wcm.io</name>
+    <url>https://wcm.io</url>
+  </organization>
+
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <name>wcm.io Community</name>
+      <organization>wcm.io</organization>
+      <organizationUrl>https://wcm.io</organizationUrl>
+    </developer>
+  </developers>
 
   <distributionManagement>
     <repository>
