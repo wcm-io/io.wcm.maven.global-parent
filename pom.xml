@@ -77,7 +77,7 @@
     <spotbugs-plugin.version>4.9.3.0</spotbugs-plugin.version>
     <!-- Stick with version 1.12.0 until the fix for https://github.com/find-sec-bugs/find-sec-bugs/issues/727 is released -->
     <spotbugs-findsecbugs-plugin.version>1.12.0</spotbugs-findsecbugs-plugin.version>
-    <pmd.version>7.13.0</pmd.version>
+    <pmd.version>7.14.0</pmd.version>
     <jacoco-maven-plugin.version>0.8.13</jacoco-maven-plugin.version>
     <versions-maven-plugin.version>2.18.0</versions-maven-plugin.version>
 
