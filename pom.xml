@@ -24,7 +24,7 @@
 
   <groupId>io.wcm.maven</groupId>
   <artifactId>io.wcm.maven.global-parent</artifactId>
-  <version>68-SNAPSHOT</version>
+  <version>70-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>io.wcm.maven.global-parent</name>
@@ -51,12 +51,15 @@
     <unittests.skip>${maven.test.skip}</unittests.skip>
     <integrationtests.skip>${maven.test.skip}</integrationtests.skip>
 
-    <!-- Java Version to build against (can be overridden by inheriting poms) -->
+    <!-- Java version to compile for (can be overridden by inheriting poms) -->
     <!-- Java 11 is the minimum version, Java 8 is no longer supported -->
     <java.version>11</java.version>
     <build.compiler.source>${java.version}</build.compiler.source>
     <build.compiler.target>${java.version}</build.compiler.target>
     <build.compiler.release>${build.compiler.target}</build.compiler.release>
+
+    <!-- Min. Java version to build with -->
+    <java.min-version.build>17</java.min-version.build>
 
     <!-- pmd needs this as a global property, even in mvn 3 - may be fixed some day -->
     <!-- see https://issues.apache.org/jira/browse/MPMD-86 -->
@@ -245,7 +248,7 @@
             <configuration>
               <rules>
                 <requireJavaVersion>
-                  <version>[11,]</version>
+                  <version>[${java.min-version.build},]</version>
                 </requireJavaVersion>
               </rules>
             </configuration>
@@ -261,7 +264,7 @@
                   <version>[${maven.min-version},)</version>
                 </requireMavenVersion>
                 <requireJavaVersion>
-                  <version>[${java.version},]</version>
+                  <version>[${java.min-version.build},]</version>
                 </requireJavaVersion>
               </rules>
             </configuration>
@@ -278,7 +281,7 @@
                   <version>[${maven.min-version},)</version>
                 </requireMavenVersion>
                 <requireJavaVersion>
-                  <version>[${java.version},]</version>
+                  <version>[${java.min-version.build},]</version>
                 </requireJavaVersion>
               </rules>
             </configuration>
@@ -295,7 +298,7 @@
                   <version>[${maven.min-version},)</version>
                 </requireMavenVersion>
                 <requireJavaVersion>
-                  <version>[${java.version},]</version>
+                  <version>[${java.min-version.build},]</version>
                 </requireJavaVersion>
               </rules>
             </configuration>
