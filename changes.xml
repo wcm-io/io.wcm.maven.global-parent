@@ -24,7 +24,7 @@
     xsi:schemaLocation="http://maven.apache.org/changes/2.0.0 https://maven.apache.org/xsd/changes-2.0.0.xsd">
   <body>
 
-    <release version="70" date="not released">
+    <release version="70" date="2025-09-23">
       <action type="update" dev="sseifert">
         Switch minimum Java version for build environment to Java 17. Default version for compilation remains Java 11.
       </action>
