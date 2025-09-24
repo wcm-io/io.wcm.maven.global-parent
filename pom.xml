@@ -61,10 +61,6 @@
     <!-- Min. Java version to build with -->
     <java.min-version.build>17</java.min-version.build>
 
-    <!-- pmd needs this as a global property, even in mvn 3 - may be fixed some day -->
-    <!-- see https://issues.apache.org/jira/browse/MPMD-86 -->
-    <targetJdk>${java.version}</targetJdk>
-
     <!-- Mininum maven version -->
     <maven.min-version>3.8.6</maven.min-version>
 
@@ -609,8 +605,6 @@
           <configuration>
             <targetJdk>${java.version}</targetJdk>
             <format>xml</format>
-            <linkXref>true</linkXref>
-            <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
             <rulesets>
               <ruleset>global-build-tools/pmd-ruleset.xml</ruleset>
             </rulesets>
