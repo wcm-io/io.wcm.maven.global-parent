@@ -29,6 +29,9 @@
         Update plugins and dependencies to latest versions.
       </action>
       <action type="update" dev="sseifert">
+        Update to global-build-tools 33.
+      </action>
+      <action type="update" dev="sseifert">
         PMD plugin: Remove obsolete parameters.
       </action>
     </release>
