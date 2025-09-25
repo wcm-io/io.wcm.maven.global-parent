@@ -24,6 +24,18 @@
     xsi:schemaLocation="http://maven.apache.org/changes/2.0.0 https://maven.apache.org/xsd/changes-2.0.0.xsd">
   <body>
 
+    <release version="71" date="2025-09-25">
+      <action type="update" dev="sseifert">
+        Update plugins and dependencies to latest versions.
+      </action>
+      <action type="update" dev="sseifert">
+        Update to global-build-tools 33.
+      </action>
+      <action type="update" dev="sseifert">
+        PMD plugin: Remove obsolete parameters.
+      </action>
+    </release>
+
     <release version="70" date="2025-09-23">
       <action type="update" dev="sseifert">
         Switch minimum Java version for build environment to Java 17. Default version for compilation remains Java 11.
