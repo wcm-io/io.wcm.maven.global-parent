@@ -24,7 +24,7 @@
 
   <groupId>io.wcm.maven</groupId>
   <artifactId>io.wcm.maven.global-parent</artifactId>
-  <version>74-SNAPSHOT</version>
+  <version>74</version>
   <packaging>pom</packaging>
 
   <name>io.wcm.maven.global-parent</name>
