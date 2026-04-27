@@ -24,7 +24,7 @@
 
   <groupId>io.wcm.maven</groupId>
   <artifactId>io.wcm.maven.global-parent</artifactId>
-  <version>77-SNAPSHOT</version>
+  <version>80-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>io.wcm.maven.global-parent</name>
@@ -59,7 +59,7 @@
     <build.compiler.release>${build.compiler.target}</build.compiler.release>
 
     <!-- Min. Java version to build with -->
-    <java.min-version.build>17</java.min-version.build>
+    <java.min-version.build>21</java.min-version.build>
 
     <!-- Mininum maven version -->
     <maven.min-version>3.8.6</maven.min-version>
