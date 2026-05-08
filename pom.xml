@@ -61,7 +61,7 @@
     <!-- Min. Java version to build with -->
     <java.min-version.build>21</java.min-version.build>
 
-    <!-- Mininum maven version -->
+    <!-- Min. Maven version -->
     <maven.min-version>3.8.6</maven.min-version>
 
     <!-- distribution settings -->
