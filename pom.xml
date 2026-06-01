@@ -24,7 +24,7 @@
 
   <groupId>io.wcm.maven</groupId>
   <artifactId>io.wcm.maven.global-parent</artifactId>
-  <version>76</version>
+  <version>80</version>
   <packaging>pom</packaging>
 
   <name>io.wcm.maven.global-parent</name>
@@ -59,9 +59,9 @@
     <build.compiler.release>${build.compiler.target}</build.compiler.release>
 
     <!-- Min. Java version to build with -->
-    <java.min-version.build>17</java.min-version.build>
+    <java.min-version.build>21</java.min-version.build>
 
-    <!-- Mininum maven version -->
+    <!-- Min. Maven version -->
     <maven.min-version>3.8.6</maven.min-version>
 
     <!-- distribution settings -->
@@ -71,11 +71,11 @@
     <distribution.releaseRepositoryUrl>https://central.sonatype.com</distribution.releaseRepositoryUrl>
 
     <!-- Plugin version -->
-    <maven-surefire-plugin.version>3.5.5</maven-surefire-plugin.version>
+    <maven-surefire-plugin.version>3.5.6</maven-surefire-plugin.version>
     <maven-release-plugin.version>3.3.1</maven-release-plugin.version>
     <spotbugs-plugin.version>4.9.8.3</spotbugs-plugin.version>
     <spotbugs-findsecbugs-plugin.version>1.14.0</spotbugs-findsecbugs-plugin.version>
-    <pmd.version>7.23.0</pmd.version>
+    <pmd.version>7.25.0</pmd.version>
     <jacoco-maven-plugin.version>0.8.14</jacoco-maven-plugin.version>
     <versions-maven-plugin.version>2.21.0</versions-maven-plugin.version>
 
@@ -431,7 +431,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-dependency-plugin</artifactId>
-          <version>3.10.0</version>
+          <version>3.11.0</version>
         </plugin>
 
         <plugin>
@@ -531,7 +531,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-enforcer-plugin</artifactId>
-          <version>3.6.2</version>
+          <version>3.6.3</version>
         </plugin>
 
         <plugin>
@@ -593,7 +593,7 @@
             <dependency>
               <groupId>com.puppycrawl.tools</groupId>
               <artifactId>checkstyle</artifactId>
-              <version>12.3.1</version>
+              <version>13.5.0</version>
             </dependency>
           </dependencies>
         </plugin>
@@ -676,7 +676,7 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
           <!-- Stick with 3.x version of this plugin for now -->
-          <version>3.21.0</version>
+          <version>3.22.0</version>
         </plugin>
 
         <plugin>
@@ -718,7 +718,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-invoker-plugin</artifactId>
-          <version>3.9.1</version>
+          <version>3.10.1</version>
         </plugin>
 
         <plugin>
@@ -754,7 +754,7 @@
         <plugin>
           <groupId>org.sonarsource.scanner.maven</groupId>
           <artifactId>sonar-maven-plugin</artifactId>
-          <version>5.5.0.6356</version>
+          <version>5.7.0.6970</version>
         </plugin>
 
         <plugin>
