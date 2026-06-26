@@ -24,7 +24,7 @@
 
   <groupId>io.wcm.maven</groupId>
   <artifactId>io.wcm.maven.global-parent</artifactId>
-  <version>80</version>
+  <version>81</version>
   <packaging>pom</packaging>
 
   <name>io.wcm.maven.global-parent</name>
@@ -73,10 +73,10 @@
     <!-- Plugin version -->
     <maven-surefire-plugin.version>3.5.6</maven-surefire-plugin.version>
     <maven-release-plugin.version>3.3.1</maven-release-plugin.version>
-    <spotbugs-plugin.version>4.9.8.3</spotbugs-plugin.version>
+    <spotbugs-plugin.version>4.10.2.0</spotbugs-plugin.version>
     <spotbugs-findsecbugs-plugin.version>1.14.0</spotbugs-findsecbugs-plugin.version>
     <pmd.version>7.25.0</pmd.version>
-    <jacoco-maven-plugin.version>0.8.14</jacoco-maven-plugin.version>
+    <jacoco-maven-plugin.version>0.8.15</jacoco-maven-plugin.version>
     <versions-maven-plugin.version>2.21.0</versions-maven-plugin.version>
 
     <!-- Set to 'enabled' to activate org.eclipse.jdt.core.compiler.annotation.nullanalysis feature in eclipse settings -->
@@ -109,7 +109,7 @@
       <dependency>
         <groupId>com.github.spotbugs</groupId>
         <artifactId>spotbugs-annotations</artifactId>
-        <version>4.9.8</version>
+        <version>4.10.2</version>
         <exclusions>
           <!-- Do not include JSR-305 annotations - the standard never got accepted, use the nullability annotations from Jetbrains instead -->
           <exclusion>
@@ -443,7 +443,7 @@
         <plugin>
           <groupId>io.wcm.devops.maven.plugins</groupId>
           <artifactId>eclipse-maven-plugin</artifactId>
-          <version>3.3.0</version>
+          <version>3.3.2</version>
           <configuration>
             <downloadSources>true</downloadSources>
             <useProjectReferences>false</useProjectReferences>
@@ -593,7 +593,7 @@
             <dependency>
               <groupId>com.puppycrawl.tools</groupId>
               <artifactId>checkstyle</artifactId>
-              <version>13.5.0</version>
+              <version>13.6.0</version>
             </dependency>
           </dependencies>
         </plugin>
@@ -816,7 +816,7 @@
         <plugin>
           <groupId>com.github.eirslett</groupId>
           <artifactId>frontend-maven-plugin</artifactId>
-          <version>2.0.0</version>
+          <version>2.0.1</version>
         </plugin>
 
         <plugin>
@@ -834,7 +834,7 @@
         <plugin>
           <groupId>org.sonatype.central</groupId>
           <artifactId>central-publishing-maven-plugin</artifactId>
-          <version>0.10.0</version>
+          <version>0.11.0</version>
         </plugin>
 
         <plugin>
