@@ -24,12 +24,18 @@
     xsi:schemaLocation="http://maven.apache.org/changes/2.0.0 https://maven.apache.org/xsd/changes-2.0.0.xsd">
   <body>
 
-    <release version="81" date="2026-06-26">
+    <release version="82" date="not released">
       <action type="update" dev="sseifert">
         Update plugins and dependencies to latest versions.
       </action>
       <action type="update" dev="sseifert">
         Update to global-build-tools 37.
+      </action>
+    </release>
+
+    <release version="81" date="2026-06-26">
+      <action type="update" dev="sseifert">
+        Update plugins and dependencies to latest versions.
       </action>
     </release>
 
