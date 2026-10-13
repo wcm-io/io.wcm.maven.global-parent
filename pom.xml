@@ -24,7 +24,7 @@
 
   <groupId>io.wcm.maven</groupId>
   <artifactId>io.wcm.maven.global-parent</artifactId>
-  <version>81</version>
+  <version>82</version>
   <packaging>pom</packaging>
 
   <name>io.wcm.maven.global-parent</name>
@@ -71,13 +71,13 @@
     <distribution.releaseRepositoryUrl>https://central.sonatype.com</distribution.releaseRepositoryUrl>
 
     <!-- Plugin version -->
-    <maven-surefire-plugin.version>3.5.6</maven-surefire-plugin.version>
+    <maven-surefire-plugin.version>3.6.0</maven-surefire-plugin.version>
     <maven-release-plugin.version>3.3.1</maven-release-plugin.version>
-    <spotbugs-plugin.version>4.10.2.0</spotbugs-plugin.version>
+    <spotbugs-plugin.version>4.10.4.1</spotbugs-plugin.version>
     <spotbugs-findsecbugs-plugin.version>1.14.0</spotbugs-findsecbugs-plugin.version>
-    <pmd.version>7.25.0</pmd.version>
+    <pmd.version>7.28.0</pmd.version>
     <jacoco-maven-plugin.version>0.8.15</jacoco-maven-plugin.version>
-    <versions-maven-plugin.version>2.21.0</versions-maven-plugin.version>
+    <versions-maven-plugin.version>2.22.0</versions-maven-plugin.version>
 
     <!-- Set to 'enabled' to activate org.eclipse.jdt.core.compiler.annotation.nullanalysis feature in eclipse settings -->
     <eclipse.settings.nullanalysis>disabled</eclipse.settings.nullanalysis>
@@ -109,7 +109,7 @@
       <dependency>
         <groupId>com.github.spotbugs</groupId>
         <artifactId>spotbugs-annotations</artifactId>
-        <version>4.10.2</version>
+        <version>4.10.4</version>
         <exclusions>
           <!-- Do not include JSR-305 annotations - the standard never got accepted, use the nullability annotations from Jetbrains instead -->
           <exclusion>
@@ -136,7 +136,7 @@
       <extension>
         <groupId>io.wcm.maven</groupId>
         <artifactId>io.wcm.maven.global-build-tools</artifactId>
-        <version>36</version>
+        <version>37</version>
       </extension>
 
       <!-- SCP support for deploying sites -->
@@ -425,7 +425,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.15.0</version>
+          <version>3.16.0</version>
         </plugin>
 
         <plugin>
@@ -437,7 +437,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-deploy-plugin</artifactId>
-          <version>3.1.4</version>
+          <version>3.2.0</version>
         </plugin>
 
         <plugin>
@@ -556,13 +556,13 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-install-plugin</artifactId>
-          <version>3.1.4</version>
+          <version>3.2.0</version>
         </plugin>
 
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
-          <version>3.5.0</version>
+          <version>3.5.1</version>
         </plugin>
 
         <plugin>
@@ -593,7 +593,7 @@
             <dependency>
               <groupId>com.puppycrawl.tools</groupId>
               <artifactId>checkstyle</artifactId>
-              <version>13.6.0</version>
+              <version>14.3.0</version>
             </dependency>
           </dependencies>
         </plugin>
@@ -706,7 +706,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-toolchains-plugin</artifactId>
-          <version>3.2.0</version>
+          <version>3.3.0</version>
         </plugin>
 
         <plugin>
@@ -724,13 +724,13 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>build-helper-maven-plugin</artifactId>
-          <version>3.6.1</version>
+          <version>3.6.2</version>
         </plugin>
 
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>buildnumber-maven-plugin</artifactId>
-          <version>3.3.0</version>
+          <version>3.3.1</version>
         </plugin>
 
         <plugin>
@@ -754,13 +754,13 @@
         <plugin>
           <groupId>org.sonarsource.scanner.maven</groupId>
           <artifactId>sonar-maven-plugin</artifactId>
-          <version>5.7.0.6970</version>
+          <version>5.8.0.7211</version>
         </plugin>
 
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>taglist-maven-plugin</artifactId>
-          <version>3.2.2</version>
+          <version>3.2.3</version>
           <configuration>
             <tagListOptions>
               <tagClasses>
@@ -789,7 +789,7 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>xml-maven-plugin</artifactId>
-          <version>1.2.1</version>
+          <version>1.2.2</version>
           <!-- use saxon as XSLT 2.0 processor -->
           <dependencies>
             <dependency>
@@ -816,7 +816,7 @@
         <plugin>
           <groupId>com.github.eirslett</groupId>
           <artifactId>frontend-maven-plugin</artifactId>
-          <version>2.0.1</version>
+          <version>2.0.2</version>
         </plugin>
 
         <plugin>
